@@ -21,7 +21,7 @@ exampleOne:
 
   # How long must players wait before doing the action again?
   # Default: 10 seconds
-  cooldown: 10
+  cooldown: 25
 
   # Valid cooldown types can be found in the link above.
   # Default: INTERACT_ITEM
@@ -66,6 +66,8 @@ exampleOne:
   # What message will be displayed in chat when the player tries to do the action?
   # Default: "" (no message)
   message-format: "<red>You must wait <gray>{time_left}</gray> seconds before using <gray>{material}</gray> again.</red>"
+
+  resets-on-death: true
 
   # The action bar section is optional.
   action-bar:

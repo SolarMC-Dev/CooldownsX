@@ -54,6 +54,8 @@ public final class CooldownSettings implements Cooldown {
 
     private String messageFormat;
 
+    private boolean resetsOnDeath;
+
     public CooldownSettings(@NotNull String id) {
         this.id = id;
 
@@ -69,6 +71,7 @@ public final class CooldownSettings implements Cooldown {
         this.bypassPermissionName = null;
         this.bypassPermission = null;
         this.usePacketCooldown = false;
+        this.resetsOnDeath = false;
 
         this.combatMode = CombatMode.IGNORE;
         this.combatCooldownSeconds = cooldownSeconds;
@@ -188,6 +191,15 @@ public final class CooldownSettings implements Cooldown {
 
     public void setUsePacketCooldown(boolean usePacketCooldown) {
         this.usePacketCooldown = usePacketCooldown;
+    }
+
+    @Override
+    public boolean isResetsOnDeath() {
+        return this.resetsOnDeath;
+    }
+
+    public void setResetsOnDeath(boolean resetsOnDeath) {
+        this.resetsOnDeath = resetsOnDeath;
     }
 
     public @NotNull CombatMode getCombatMode() {

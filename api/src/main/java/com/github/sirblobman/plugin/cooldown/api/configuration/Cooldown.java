@@ -72,6 +72,11 @@ public interface Cooldown {
     boolean isUsePacketCooldown();
 
     /**
+     * @return {@code true} if a cooldown should be reset for materials when players die, otherwise {@code false}.
+     */
+    boolean isResetsOnDeath();
+
+    /**
      * @return The mode for CombatLogX settings for this cooldown.
      */
     @NotNull CombatMode getCombatMode();

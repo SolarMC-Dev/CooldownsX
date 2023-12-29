@@ -113,6 +113,7 @@ public final class CooldownManager implements PlayerCooldownManager {
             List<String> entityTypeList = section.getStringList("entity");
             String bypassPermissionName = section.getString("bypass-permission");
             boolean packetCooldown = section.getBoolean("packet-cooldown", false);
+            boolean resetsOnDeath = section.getBoolean("resets-on-death", false);
             String combatModeName = section.getString("combat-mode", "IGNORE");
             int combatCooldownSeconds = section.getInt("combat-cooldown-seconds", 5);
             List<String> disabledWorldList = section.getStringList("disabled-world-list");
@@ -160,6 +161,7 @@ public final class CooldownManager implements PlayerCooldownManager {
                 cooldownSettings.setEntityList(entityList);
                 cooldownSettings.setBypassPermissionName(bypassPermissionName);
                 cooldownSettings.setUsePacketCooldown(packetCooldown);
+                cooldownSettings.setResetsOnDeath(resetsOnDeath);
                 cooldownSettings.setCombatMode(combatMode);
                 cooldownSettings.setCombatCooldownSeconds(combatCooldownSeconds);
                 cooldownSettings.setDisabledWorldList(disabledWorldList);

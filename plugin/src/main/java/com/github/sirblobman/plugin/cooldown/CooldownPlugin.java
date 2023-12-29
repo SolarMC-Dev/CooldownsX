@@ -2,6 +2,7 @@ package com.github.sirblobman.plugin.cooldown;
 
 import java.util.logging.Logger;
 
+import com.github.sirblobman.plugin.cooldown.listener.*;
 import org.jetbrains.annotations.NotNull;
 
 import org.bukkit.Bukkit;
@@ -24,13 +25,6 @@ import com.github.sirblobman.plugin.cooldown.command.CommandCooldownsX;
 import com.github.sirblobman.plugin.cooldown.dictionary.EntityDictionary;
 import com.github.sirblobman.plugin.cooldown.dictionary.MaterialDictionary;
 import com.github.sirblobman.plugin.cooldown.dictionary.PotionDictionary;
-import com.github.sirblobman.plugin.cooldown.listener.ListenerConsume;
-import com.github.sirblobman.plugin.cooldown.listener.ListenerInteract;
-import com.github.sirblobman.plugin.cooldown.listener.ListenerPlaceEntity;
-import com.github.sirblobman.plugin.cooldown.listener.ListenerPotionLegacy;
-import com.github.sirblobman.plugin.cooldown.listener.ListenerPotionModern;
-import com.github.sirblobman.plugin.cooldown.listener.ListenerPotionThrow;
-import com.github.sirblobman.plugin.cooldown.listener.ListenerUndying;
 import com.github.sirblobman.plugin.cooldown.manager.CooldownManager;
 import com.github.sirblobman.plugin.cooldown.placeholder.HookPlaceholderAPI;
 import com.github.sirblobman.plugin.cooldown.task.ActionBarTask;
@@ -155,6 +149,7 @@ public final class CooldownPlugin extends ConfigurablePlugin implements Cooldown
         new ListenerConsume(this).register();
         new ListenerInteract(this).register();
         new ListenerPotionThrow(this).register();
+        new ListenerDeath(this).register();
 
         // Totem of Undying was added in 1.11
         if (minorVersion >= 11) {
